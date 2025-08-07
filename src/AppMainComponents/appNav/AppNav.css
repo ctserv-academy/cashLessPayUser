@@ -1,0 +1,69 @@
+#appNavMainContainer {
+    height: calc(100% - 40px);
+    width: 200px;
+    position: absolute;
+    top: 0;
+    background-color: #515151;
+    z-index: 1000;
+}
+
+#appNavMainContainer div {
+    padding-top: 10px;
+}
+
+#appNavMainContainer a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+}
+
+
+.isNavOpen {
+    animation: slide-in 0.5s forwards;
+    -webkit-animation: slide-in 0.5s forwards;
+}
+
+@keyframes slide-in {
+    0% {
+        left: -200px;
+    }
+
+    100% {
+        left: 0px;
+    }
+}
+
+@-webkit-keyframes slide-in {
+    0% {
+        left: -200px;
+    }
+
+    100% {
+        left: 0px;
+    }
+}
+
+.isNavClosed {
+    animation: slide-out 0.5s forwards;
+    -webkit-animation: slide-out 0.5s forwards;
+}
+
+@keyframes slide-out {
+    0% {
+        left: 0px;
+    }
+
+    100% {
+        left: -200px;
+    }
+}
+
+@-webkit-keyframes slide-out {
+    0% {
+        left: 0px;
+    }
+
+    100% {
+        left: -200px;
+    }
+}
