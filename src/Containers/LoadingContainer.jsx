@@ -1,12 +1,13 @@
 import React, { useContext, useEffect, useRef } from 'react'
 import { Outlet } from 'react-router-dom';
-import { LoadingContext } from '../ContextProviders/LoadingContext';
+import { LoadingContext } from '../ContextProvider/LoadingContext'
 import { Loader } from '../ReusableComponents/Loader';
+import "./loadingContainer.css"
 
 
 
 export function LoadingContainer() {
-    const { loadingcounter } = useContext(LoadingContext);
+    const { isLoading } = useContext(LoadingContext);
     const spinner = useRef(null);
 
     useEffect(() => {
@@ -18,23 +19,12 @@ export function LoadingContainer() {
             </div>;
     }, []);
 
-    useEffect(() => {
-        console.log(loadingcounter)
-    }, [loadingcounter])
-
 
 
     return (
         <>
-            <Loader message={spinner.current} show={loadingcounter > 0} />
-
-
+            <Loader message={spinner.current} show={isLoading > 0} />
             <Outlet />
-
         </>
-
-
-
-
     )
 }

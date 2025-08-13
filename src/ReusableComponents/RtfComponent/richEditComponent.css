@@ -1,0 +1,8 @@
+
+.dxreView, .dxreControl {
+    padding: 0px !important;
+}
+.dxreView .dxrePage {
+    margin: 0px !important;
+    width: auto !important;
+}

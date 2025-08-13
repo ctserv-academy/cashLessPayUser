@@ -1,0 +1,153 @@
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    /*font-size:100%;*/
+    vertical-align: baseline;
+    background: transparent;
+}
+
+html,
+body,
+#root,
+.Loader,
+.Loader__content,
+#simple-container,
+#login-container,
+.app,
+.main,
+.sidebar-fixed {
+    height: 100% !important;
+    overflow: hidden;
+}
+
+.app-body {
+    height: calc(100% - 100px)
+}
+
+.container-fluid,
+.animated.fadeIn {
+    height: 100%;
+    /* overflow-x: hidden ;
+    overflow-y: auto; */
+}
+
+.animated.fadeIn {
+    height: calc(100% - 98px);
+    padding: 0 30px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.reset-modal-style {
+    height: calc(100% - 40px) !important;
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    margin: auto !important;
+}
+
+.modal-content {
+    max-height: 100%
+}
+
+.modal-body {
+    overflow: auto;
+}
+
+.fitContant-modal {
+    height: fit-content !important;
+    margin: 0 auto !important;
+}
+
+.buttonsContainer .row button {
+    float: right;
+}
+
+@media print {
+
+    html,
+    body,
+    #root,
+    .Loader,
+    .Loader__content,
+    #simple-container,
+    #login-container,
+    .app,
+    .main,
+    .sidebar-fixed {
+        height: 100% !important;
+        overflow: initial;
+    }
+}

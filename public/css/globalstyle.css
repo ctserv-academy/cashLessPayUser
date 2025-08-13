@@ -1,0 +1,57 @@
+body,
+.form-control {
+  font-size: 0.875rem !important;
+  font-family: 'Inter', sans-serif !important;
+}
+
+.form-control {
+  line-height: 25px !important;
+}
+
+@media (max-width: 768px) {
+
+  input,
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+.app-body .main {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.app-body .main .container-fluid .row {
+  /* height: 100%; */
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+.app-body .main .container-fluid .row {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+.app-body .main .container-fluid .row .col-12 {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+a:focus,
+a:hover {
+  text-decoration: none;
+}
+
+.alert-danger {
+  background-color: #fff0f0 !important;
+  border-color: brown !important;
+  color: brown !important;
+}
+
+.alert-success,
+.alert-success input.react-date-field__input {
+  background-color: #dff0d8 !important;
+  border-color: #d6e9c6 !important;
+  color: #3c763d !important;
+}

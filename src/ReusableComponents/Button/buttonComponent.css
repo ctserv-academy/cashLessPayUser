@@ -1,0 +1,48 @@
+.btn {
+  display: inline-block;
+  font-weight: normal;
+  line-height: 1.25;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+  }
+
+.btn-custom {
+    color: #fff !important;
+    background-color: #0078bb !important;
+    border-color: #0078bb !important;
+  }
+  
+  .btn-custom:hover {
+    color: #fff;
+    background-color: #086aa0;
+    border-color: #086aa0;
+  }
+  
+  .btn-radius {
+    border: 1px solid gray;
+    border-radius: 5px;
+  }
+  
+  .btn-yellow {
+    background: #f1e767;
+    /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#f1e767, #feb645);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#f1e767, #feb645);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#f1e767, #feb645);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#f1e767, #feb645);
+    /* Standard syntax */
+  }

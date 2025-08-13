@@ -1,0 +1,67 @@
+/* from customstyle.css */
+
+.modal-header {
+    /* color: #fff !important;
+    background: #0078bb !important; */
+    color: black !important;
+}
+
+.allowBootstrapHeader .modal-header {
+    display: block !important;
+}
+
+.modal-title {
+    font-size: 1.25rem;
+    line-height: 1.1;
+}
+
+.modal-header button.close {
+    color: #fff;
+}
+
+.modal-footer {
+    padding: 10px 15px;
+}
+
+.modal-xl {
+    max-width: 90%;
+}
+
+@media (min-width: 576px) {
+    .modal-dialog {
+        margin: 75px auto 20px;
+    }
+}
+
+
+
+.importDataModal .modal-body {
+    height: calc(80vh - 150px);
+    overflow-y: auto;
+}
+
+
+#custom-modal-body {
+    overflow: auto !important;
+    position: unset !important;
+    /* padding-bottom: 70px; */
+}
+
+
+#custom-modal-footer-main-buttons-container {
+    padding: 0.75rem;
+    border-top: 1px solid #dee2e6;
+    border-bottom-left-radius: calc(0.3rem - 1px);
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+#custom-modal-footer-main-buttons-container #custom-modal-footer-buttons-container {
+    float: right;
+}
+
+#custom-modal-footer-main-buttons-container #custom-modal-footer-buttons-container button {
+    margin-right: 10px;
+}

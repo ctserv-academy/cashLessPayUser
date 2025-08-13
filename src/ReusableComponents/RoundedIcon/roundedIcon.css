@@ -1,0 +1,17 @@
+/* from customstyle.css */
+.roundWrapper {
+    text-align: center;
+    width: 22px;
+    height: 22px;
+    position: relative;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.roundWrapper i {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}

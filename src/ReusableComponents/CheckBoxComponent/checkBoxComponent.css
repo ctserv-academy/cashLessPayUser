@@ -1,0 +1,12 @@
+/* from customstyle.css */
+.checkbox-in-table-header label {
+    margin-bottom: 0px;
+}
+
+.checkbox-in-table-header>div {
+    display: inline-block;
+}
+
+.checkbox-in-table-header>div>label {
+    margin: 0px;
+}

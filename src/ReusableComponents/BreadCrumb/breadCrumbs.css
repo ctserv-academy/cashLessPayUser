@@ -1,0 +1,14 @@
+/* from customstyle.css */
+.breadcrumb {
+    padding: 0.1rem 1rem !important;
+    margin-bottom: 0px !important;
+    font-size: 12px !important;
+    /* height: 25px; */
+    background: #ececec;
+    border-bottom: 1px solid #d1d4d7;
+}
+
+.breadcrumb a {
+    color: #20a8d8;
+    text-decoration: none;
+}

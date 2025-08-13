@@ -1,0 +1,50 @@
+.filter-menu-list {
+    position: absolute;
+    top: calc(100% + 1px);
+    left: 10px;
+    width: 100%;
+    max-height: 30vh;
+    padding: 0 4px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: var(--card-face-color);
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 6px 0 rgb(var(--card-shadow-color), .2), 0 0 12px 2px rgb(var(--card-shadow-color), .05);
+    transition-timing-function: var(--transition-out);
+    transition-duration: var(--veryslow);
+    transition-property: opacity, transform;
+    contain: content;
+}
+
+.filter-menu-list-hidden {
+    /* display: none; use opacity instead of display so it could be animated*/
+    /* opacity: 0; */
+    display: none;
+}
+
+.filter-menu-list-ul {
+    position: static;
+    display: block;
+    min-width: var(--v-list-min-width);
+    max-width: var(--v-list-max-width);
+    min-height: var(--v-list-min-height);
+    max-height: var(--v-list-max-height);
+    padding: var(--v-list-padding);
+    overflow: auto;
+    color: var(--v-list-color);
+    line-height: 22px;
+    list-style: none;
+    border-radius: var(--v-list-border-radius);
+}
+
+
+
+.filter-menu-list-separator-div {
+    max-width: calc(100% - 16px);
+    margin: 8px;
+}
+
+.filter-menu-list-separator {
+    margin: 0px;
+}

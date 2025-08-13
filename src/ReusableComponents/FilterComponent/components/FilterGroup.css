@@ -1,0 +1,21 @@
+.filter-group-ul {
+    margin: 10px 8px;
+    padding-left: 0;
+    /*padding zero hides the list markers it can also be unset using list-style-type: none; */
+    overflow: auto;
+    max-height: 450px;
+
+}
+
+.filter-group-ul li {
+    list-style-type: none;
+}
+
+.filter-group-dragElem {
+    opacity: 0.4;
+    border: 2px solid blue;
+}
+
+.filter-group-dragElem-over {
+    border: 2px solid blue;
+}

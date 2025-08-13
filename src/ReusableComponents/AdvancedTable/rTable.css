@@ -1,0 +1,400 @@
+.ReactTable .rt-noData {
+  padding: 0px !important;
+  margin: 35px 0px !important;
+}
+
+.displayNone {
+  display: none !important;
+}
+
+.ReactTable .rt-thead {
+  background-color: #f1f1f1;
+  max-height: 33px !important;
+}
+
+.ReactTable .rt-thead .rt-th.hidden-pc,
+.ReactTable .rt-thead .rt-td.hidden-pc,
+.ReactTable .rt-tbody .rt-tr-group .rt-tr .rt-td.hidden-pc,
+.ReactTable .rt-tbody .rt-tr-group .rt-tr .rt-td .hidden-pc {
+  display: none !important;
+}
+
+/*make sub component always fully shown z-index*/
+.ReactTable .rt-tbody .rt-tr-group>div:nth-child(2) {
+  z-index: 1;
+}
+
+.ReactTable .rt-tbody .rt-tr-group .rt-tr .rt-td.hidden-mobile,
+.ReactTable .rt-tbody .rt-tr-group .rt-tr .rt-td .hidden-mobile {
+  display: block !important;
+}
+
+.ReactTable .rt-tbody .rt-tr-group .rt-tr .rt-td .mobile-label {
+  display: none !important;
+}
+
+.ReactTable .rt-thead .rt-th,
+.ReactTable .rt-thead .rt-td {
+  box-shadow: none;
+}
+
+.ReactTable .rt-thead .rt-th div.checkbox-in-table-header {
+  display: inline-block;
+}
+
+.ReactTable .rt-thead .rt-th.-sort-asc,
+.ReactTable .rt-thead .rt-td.-sort-asc {
+  box-shadow: none
+}
+
+.ReactTable .rt-thead .rt-th.-sort-desc,
+.ReactTable .rt-thead .rt-td.-sort-desc {
+  box-shadow: none
+}
+
+.ReactTable .rt-thead .rt-th.-cursor-pointer>div:after,
+.ReactTable .rt-thead .rt-td.-cursor-pointer>div:after {
+  font-family: 'FontAwesome';
+  position: relative;
+  float: right;
+}
+
+.ReactTable .rt-thead .rt-th.-cursor-pointer.-sort-asc>div:after,
+.ReactTable .rt-thead .rt-td.-cursor-pointer.-sort-asc>div:after {
+  content: "\f0de";
+}
+
+.ReactTable .rt-thead .rt-th.-cursor-pointer.-sort-desc>div:after,
+.ReactTable .rt-thead .rt-td.-cursor-pointer.-sort-desc>div:after {
+  content: "\f0dd";
+}
+
+.ReactTable .rt-th,
+.ReactTable .rt-td {
+  white-space: unset;
+  text-overflow: unset;
+  overflow: unset;
+  word-wrap: break-word;
+}
+
+.rthfc .rt-thead.-headerGroups,
+.rthfc .rt-thead.-header {
+  z-index: 3;
+}
+
+.rthfc .rt-thead.-filters {
+  z-index: 2;
+}
+
+.rthfc .rt-th {
+  background-color: #f1f1f1;
+}
+
+.rthfc .rt-td {
+  background-color: #fff;
+}
+
+.rthfc .-headerGroups .rt-th {
+  background-color: #f7f7f7;
+}
+
+.rthfc.-striped .rt-tr.-odd .rt-td {
+  background-color: #f7f7f7;
+}
+
+.rthfc.-highlight .rt-tr:hover .rt-td {
+  background-color: #f2f2f2;
+}
+
+.rthfc .-filters .rt-th.rthfc-th-fixed-left-last,
+.rthfc .rt-th.rthfc-th-fixed-left-last,
+.rthfc .rt-td.rthfc-td-fixed-left-last {
+  border-right: solid 1px #ccc;
+}
+
+.rthfc .rt-th.rthfc-th-fixed-right-first,
+.rthfc .rt-td.rthfc-td-fixed-right-first {
+  border-left: solid 1px #ccc;
+}
+
+/*------------ Sticky position version: -sp ------------*/
+
+.rthfc.-sp .rt-tbody {
+  overflow: visible;
+  flex: 1 0 auto;
+}
+
+.rthfc.-sp .rt-thead {
+  position: -webkit-sticky;
+  position: sticky;
+}
+
+.rthfc.-sp .rt-thead.-headerGroups {
+  border-bottom-color: #f2f2f2;
+}
+
+.rthfc.-sp .rt-tfoot {
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 1;
+  bottom: 0px;
+}
+
+.rthfc.-sp .rthfc-th-fixed,
+.rthfc.-sp .rthfc-td-fixed {
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 1;
+}
+
+.rthfc.-sp .rthfc-th-fixed-left,
+.rthfc.-sp .rthfc-td-fixed-left {
+  left: 0;
+}
+
+.rthfc.-sp .rthfc-th-fixed-right,
+.rthfc.-sp .rthfc-td-fixed-right {
+  left: 0;
+}
+
+/*------------ scroll event version: -se ------------*/
+
+.rthfc.-se .-header .rt-th.rthfc-th-fixed,
+.rthfc.-se .-headerGroups .rt-th.rthfc-th-fixed,
+.rthfc.-se .-filters .rt-th.rthfc-th-fixed,
+.rthfc.-se .rt-td.rthfc-td-fixed {
+  position: relative;
+  z-Index: 1;
+}
+
+.rthfc.-striped .rt-tr.-odd .rt-td,
+.ReactTable.-striped .rt-tr.-even {}
+
+.numberOfRows {
+  text-align: right;
+  position: relative;
+}
+
+@media (min-width: 767px) {
+  .numberOfRows.hidden-pc {
+    display: none !important;
+  }
+}
+
+@media (max-width: 766px) {
+  .numberOfRows.hidden-mobile {
+    display: none !important;
+  }
+
+  .-striped.mobile-overflow {
+    overflow-x: scroll;
+  }
+
+}
+
+@media only screen and (max-width: 766px) {
+  .ReactTable {
+    display: block !important;
+    height: unset !important;
+    border: none !important;
+  }
+
+  .ReactTable .rt-tbody .rt-tr-group .rt-tr .rt-td.hidden-pc,
+  .ReactTable .rt-tbody .rt-tr-group .rt-tr .rt-td .hidden-pc {
+    display: block !important;
+  }
+
+  .ReactTable .rt-tbody .rt-tr-group .rt-tr .rt-td.hidden-mobile,
+  .ReactTable .rt-tbody .rt-tr-group .rt-tr .rt-td .hidden-mobile {
+    display: none !important;
+  }
+
+  .ReactTable .rt-tbody .rt-tr-group .rt-tr .rt-td .mobile-label {
+    display: block !important;
+    color: #999;
+  }
+
+  .ReactTable .rt-table {
+    display: block !important;
+  }
+
+  .rthfc.-sp .rt-thead {
+    display: none;
+  }
+
+  .ReactTable .rt-table .rt-thead {
+    min-width: unset !important;
+  }
+
+  .ReactTable .rt-table .rt-tbody {
+    min-width: unset !important;
+  }
+
+  .ReactTable .rt-tr-group {
+    display: block !important;
+  }
+
+  .ReactTable .rt-tbody .rt-tr-group {
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    margin-bottom: 15px;
+  }
+
+  .ReactTable .rt-tr {
+    display: block !important;
+  }
+
+  .ReactTable .rt-tr .rt-td {
+    display: block !important;
+    width: 100% !important;
+    max-width: unset !important;
+  }
+
+  .ReactTable .rt-th,
+  .ReactTable .rt-td {
+    display: block !important;
+    width: 100% !important;
+    max-width: unset !important;
+  }
+
+  .rthfc.-sp .rthfc-th-fixed,
+  .rthfc.-sp .rthfc-td-fixed {
+    position: unset;
+    left: 0px;
+    border: none !important;
+  }
+
+  .rthfc .-filters .rt-th.rthfc-th-fixed-left-last,
+  .rthfc .rt-th.rthfc-th-fixed-left-last,
+  .rthfc .rt-td.rthfc-td-fixed-left-last {
+    border: none !important;
+  }
+
+  .ReactTable .rt-tbody .rt-td {
+    border: none !important;
+  }
+
+  .ReactTable .rt-tbody .rt-td:last-child {}
+
+
+}
+
+.rt-td {
+  padding: 0 !important;
+}
+
+.rt-td .text-center-and-middle {
+  /* padding: 7px 5px !important; */
+  display: block;
+}
+
+.rt-tr:hover .rt-td,
+.rt-tr-group:hover {
+  background: #dfdfdf !important;
+}
+
+.selectedRowInTbl {
+  background-color: #b7b7b7;
+}
+
+
+
+
+
+
+/* from customstyle.css */
+/* React Table Start */
+
+.ReactTable .-pagination {
+  box-shadow: unset !important;
+  border-top: 0px !important;
+}
+
+
+.ReactTable .rt-table {
+  min-height: 100px !important;
+}
+
+.ReactTable .rt-thead {
+  background: #f1f1f1;
+}
+
+.ReactTable .rt-thead.-header {
+  box-shadow: unset !important;
+  border-bottom: 1px #ccc solid;
+}
+
+.ReactTable .actionBtn {
+  color: #1477AA;
+  cursor: pointer;
+  margin-right: 10px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.ReactTable .actionBtn:hover {
+  color: #1AA1D0;
+}
+
+.ReactTable .actionBtnSeperator {
+  margin-right: 10px;
+}
+
+.ReactTable .actionBtnSeperator:after {
+  content: "|";
+}
+
+.ReactTable .subTable {
+  margin-bottom: 20px !important;
+  box-shadow: 0px 2px 11px 0 rgba(0, 0, 0, 0.64);
+}
+
+.ReactTable .subTable thead {
+  background: #dcdcdc;
+}
+
+.ReactTable .subTable thead tr th {
+  font-weight: normal;
+  color: #000;
+  border: 0px;
+}
+
+.table-bordered th,
+.table-bordered td {
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.ReactTable .rt-resizer {
+  width: 5px !important;
+  right: -3px !important;
+}
+
+@media only screen and (max-width: 766px) {
+  .ReactTable .rt-tbody .rt-tr-group {
+    position: relative;
+  }
+}
+
+.table-header-to-left .ReactTable .rt-thead .rt-tr {
+  text-align: initial;
+}
+
+
+.table-responsive {
+  overflow-x: unset !important;
+}
+
+.react-datepicker__time-list {
+  padding: 0 !important;
+}
+
+.ReactTable .rt-thead .rt-resizable-header-content {
+  color: #808082;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 5px;
+}
+
+.ReactTable .rt-thead.-header {
+  min-height: fit-content;
+  border: none;
+}

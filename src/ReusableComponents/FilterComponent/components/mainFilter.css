@@ -1,0 +1,87 @@
+:root {
+    --brand: var(--primary);
+    --white: #fff;
+    --black: #090c0d;
+    --primary: #6644ff;
+    --primary-alt: #f0ecff;
+    --secondary: #ff99dd;
+    --secondary-alt: #ffe6f7;
+    --danger: #e35169;
+    --transition: cubic-bezier(.4, 0, .2, 1);
+    --transition-in: cubic-bezier(0, 0, .2, 1);
+    --transition-out: cubic-bezier(.4, 0, 1, 1);
+    --fast: 125ms;
+    --medium: .2s;
+    --slow: .3s;
+    --veryslow: .4s;
+    --header-bar-height: 61px;
+    --content-padding: 12px;
+    --border-width: 2px;
+    --border-normal: #d3dae4;
+    --border-radius-outline: 6px;
+    --border-radius: 4px;
+    --input-height: 52px;
+    --input-height-tall: 168px;
+    --input-height-max: 500px;
+    --input-padding: 12px;
+    --form-column-width: 300px;
+    --form-column-max-width: 380px;
+    --form-horizontal-gap: 32px;
+    --form-vertical-gap: 40px;
+    --v-icon-size: 24px;
+    --v-icon-color: #a2b5cd;
+    --v-icon-color-hover: #a2b5cd;
+
+    --background-normal: #f0f4f9;
+    --background-normal-alt: #e4eaf1;
+    --background-subdued: #f7fafc;
+    --background-highlight: #f7f9fd;
+    --background-page: #ffffff;
+    --background-input: #ffffff;
+    --background-page-rgb: 255, 255, 255;
+    --background-inverted: #263238;
+
+    --foreground-normal: #4f5464;
+    --foreground-normal-alt: #172940;
+    --foreground-subdued: #a2b5cd;
+    --foreground-inverted: #fff;
+    --background-page: #ffffff;
+    --background-subdued: #f7fafc;
+    --card-face-color: #fafcfd;
+    --card-shadow-color: 23, 41, 64;
+    --card-shadow: 0px 0px 6px 0px rgba(var(--card-shadow-color), .2);
+
+    --v-list-padding: 4px 0;
+    --v-list-border-radius: var(--border-radius);
+    --v-list-max-height: none;
+    --v-list-max-width: none;
+    --v-list-min-width: 220px;
+    --v-list-min-height: none;
+    --v-list-color: var(--foreground-normal-alt);
+    --v-list-color-hover: var(--foreground-normal-alt);
+    --v-list-color-active: var(--foreground-normal-alt);
+    --v-list-background-color-hover: var(--background-normal);
+    --v-list-background-color-active: var(--background-normal);
+
+
+    --v-list-item-min-width: none;
+    --v-list-item-max-width: none;
+    --v-list-item-min-height-nav: 36px;
+    --v-list-item-min-height: 32px;
+    --v-list-item-max-height: auto;
+    --v-list-item-padding-nav: 0 var(--input-padding);
+    --v-list-item-padding: 0 var(--input-padding) 0 calc(var(--input-padding) + var(--v-list-item-indent, 0px));
+    --v-list-item-margin-nav: 2px 0;
+    --v-list-item-margin: 2px 0;
+    --v-list-item-color: var(--v-list-color, var(--foreground-normal));
+    --v-list-item-color-hover: var(--v-list-color-hover, var(--foreground-normal));
+    --v-list-item-color-active: var(--v-list-color-active, var(--foreground-normal));
+    --v-list-item-border-radius: var(--border-radius);
+    --v-list-item-border-color: var(--border-subdued);
+    --v-list-item-border-color-hover: var(--border-normal-alt);
+    --v-list-item-color: var(--v-list-color, var(--foreground-normal));
+    --v-list-item-color-hover: var(--v-list-color-hover, var(--foreground-normal));
+    --v-list-item-color-active: var(--v-list-color-active, var(--foreground-normal));
+    --v-list-item-background-color-hover: var(--v-list-background-color-hover, var(--background-normal));
+    --v-list-item-background-color-active: var(--v-list-background-color-active, var(--background-normal));
+}

@@ -1,0 +1,93 @@
+/* from customstyle.css */
+.drop-down-container {
+    position: fixed;
+    max-height: 30vh;
+    padding: 0 4px;
+    overflow: visible;
+    background-color: var(--card-face-color);
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 6px 0 rgb(var(--card-shadow-color), .2), 0 0 12px 2px rgb(var(--card-shadow-color), .05);
+    transition-property: opacity, transform;
+    transition-timing-function: var(--transition-out);
+    transition-duration: var(--veryslow);
+
+    /* contain: content; */
+    z-index: 1001;
+}
+
+.drop-down-container-div {
+    max-height: 30vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.drop-down-ul {
+    min-width: var(--v-list-min-width);
+    max-width: var(--v-list-max-width);
+    min-height: var(--v-list-min-height);
+    max-height: var(--v-list-max-height);
+    padding: var(--v-list-padding);
+    overflow: auto;
+    color: var(--v-list-color);
+    line-height: 22px;
+    list-style: none;
+    border-radius: var(--v-list-border-radius);
+}
+
+.drop-down-li {
+    position: relative;
+    display: flex;
+    flex-basis: 100%;
+    flex-grow: 1;
+    flex-shrink: 1;
+    align-items: center;
+    min-width: var(--v-list-item-min-width);
+    max-width: var(--v-list-item-max-width);
+    min-height: var(--v-list-item-min-height);
+    max-height: var(--v-list-item-max-height);
+    margin: var(--v-list-item-margin);
+    padding: var(--v-list-item-padding);
+    overflow: hidden;
+    color: var(--v-list-item-color);
+    text-decoration: none;
+    border-radius: var(--v-list-item-border-radius);
+    cursor: pointer;
+    transition: var(--fast) var(--transition);
+    transition-property: background-color, color;
+    user-select: none;
+}
+
+.drop-down-li:hover {
+    background-color: var(--foreground-subdued);
+}
+
+.drop-down-arrow {
+    top: -6px;
+    position: absolute;
+    left: 20px;
+    transform: translate(19px, 0px);
+    content: '';
+    z-index: 1000;
+    width: 10px;
+    height: 10px;
+    overflow: hidden;
+    border-radius: 2px;
+    box-shadow: none;
+}
+
+.drop-down-arrow::after {
+    position: absolute;
+    z-index: 1;
+    width: 10px;
+    height: 10px;
+    overflow: hidden;
+    border-radius: 2px;
+    content: "";
+    background: var(--card-face-color);
+    top: 3px;
+    box-shadow: -2px -2px 4px -2px rgba(var(--card-shadow-color), .2);
+    transform: rotate(45deg) scale(1);
+    transition: transform var(--medium) var(--transition-in);
+
+}

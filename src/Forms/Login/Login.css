@@ -1,0 +1,227 @@
+#loginMainContainer {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#loginBody {
+    height: 80%;
+    min-height: 590px;
+    position: absolute;
+    top: 19%;
+    left: 17%;
+    width: 25%;
+}
+
+.login-container-fluid {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+#loginLogo {
+    width: 75%;
+    height: auto;
+}
+
+#loginTitle {
+    font-weight: bold;
+    opacity: 0.75;
+    text-align: center;
+    font-size: 23px;
+    overflow: visible;
+    text-wrap-mode: nowrap;
+}
+
+#loginNote {
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.alert-text-danger {
+    color: #de8787;
+}
+
+#btnForgetPass {
+    cursor: "pointer";
+    padding-left: "10px"
+}
+
+#loginFooter {
+    width: 100%;
+    height: 45px;
+    position: absolute;
+    bottom: 0;
+}
+
+#loginFooter img {
+    position: relative;
+    width: 210px;
+    left: 3%;
+}
+
+@media(max-width: 767px), (orientation: portrait) {
+    #loginBody {
+        position: relative;
+        width: 70%;
+        top: 13%;
+    }
+
+    #loginBody .login-container-fluid {
+        top: 9%;
+        overflow: visible;
+    }
+
+    #loginBody,
+    #loginFooter img {
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: auto;
+    }
+
+    #loginFooter img {
+        position: absolute;
+    }
+}
+
+/* container-fluid CSS  from styles.css in old EMR*/
+@media (min-width: 576px) {
+    .login-container-fluid {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}
+
+@media (min-width: 768px) {
+    .login-container-fluid {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}
+
+@media (min-width: 992px) {
+    .login-container-fluid {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .login-container-fluid {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}
+
+/* Footer CSS */
+@media(min-width: 767px) {
+    #loginFooter {
+        position: absolute;
+        bottom: 0;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+    #loginFooter.push-up {
+        bottom: calc(3% + 20px);
+    }
+}
+
+@media (min-width: 725px) and (max-width: 1024px) and (orientation: portrait) {
+    #loginFooter {
+        bottom: 3%;
+        margin-top: 20px;
+    }
+
+    #loginFooter.push-up {
+        bottom: calc(3% + 20px);
+    }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    #loginFooter.no-browzer-bar {
+        bottom: calc(3% + 50px);
+    }
+}
+
+@media (min-width: 1281px) {
+
+    #loginMainContainer {
+        background-image: url(../../../public/img/emrbgmin.jpg);
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+    #loginMainContainer {
+        background-image: url(../../../public/img/emrbgmin.jpg);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    #loginMainContainer {
+        background-image: url(../../../public/img/emrbg-tablet-portrait.jpg);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    #loginMainContainer {
+        background-image: url(../../../public/img/emrbgmin.jpg);
+    }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+    #loginMainContainer {
+        background-image: url(../../../public/img/emrbg-phone.jpg);
+    }
+}
+
+.input-group-addon:not(:last-child) {
+    border-right: 0;
+}
+
+.input-group-addon,
+.input-group-btn {
+    min-width: 40px;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.input-group-addon {
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 0;
+    font-size: 0.875rem;
+    font-weight: normal;
+    line-height: 1.25;
+    color: #55595c;
+    text-align: center;
+    background-color: #d1d4d7;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.input-group-addon,
+.input-group-btn {
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.input-group-addon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.btn.btn-custom.btn-secondary {
+    font-size: 17px;
+}
+
+#loginMainContainer #loginFooter {
+    width: fit-content;
+}

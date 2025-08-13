@@ -1,0 +1,20 @@
+#modal-overlay-content{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999999
+}
+
+.unsupported-message {
+  height: 100% !important;
+  background-color: #525252;
+  color: #fff
+}
+
+.pg-viewer-wrapper {
+  overflow: auto !important;
+  height: calc(100vh - 45px) !important;
+  margin-top: 10px
+}

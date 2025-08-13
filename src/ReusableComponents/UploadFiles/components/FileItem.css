@@ -1,0 +1,64 @@
+.file-item {
+  margin: 0.5rem;
+  width: 100%;
+  min-width: 17.5rem;
+}
+
+.file-item__remove {
+  color: #fff;
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  cursor: pointer;
+}
+
+.file-item a {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  padding: 1rem;
+  color: white;
+  background: #292929;
+  cursor: pointer;
+}
+
+.file-item a:hover,
+.file-item a:active,
+.file-item__remove:hover + a {
+  background: #ffd900;
+}
+
+.file-item__content {
+  padding: 0;
+  position: relative;
+  height: 5rem
+}
+
+.file-item__image {
+  width: 4rem;
+  height: 4rem;
+  margin-right: 1rem;
+}
+
+.file-item__info h2 {
+  font-size: 1rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: normal;
+  color: #ffd900;
+}
+
+.file-item:hover h2,
+.file-item:active h2,
+.file-item:hover h3,
+.file-item:active h3,
+.file-item:hover .file-item__remove,
+.file-item:active .file-item__remove,
+.file-item__remove:hover {
+  color: #292929;
+}
+
+.file-item__info h3 {
+  margin: 0;
+}

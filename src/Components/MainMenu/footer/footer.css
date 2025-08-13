@@ -1,0 +1,41 @@
+#footerMianContainer {
+    text-align: right;
+    position: relative;
+    height: 40px;
+    bottom: 0;
+    width: 100%;
+    background-color: #0078bb;
+    color: #fff;
+
+}
+
+#NoInternetBannerMianContainer {
+    position: absolute;
+    text-align: center;
+    bottom: 30px;
+    z-index: 999;
+    width: 100%;
+    background-color: #ce4756;
+    color: #fff;
+    border-top: 2px solid brown;
+    border-bottom: 2px solid brown;
+    padding: 5px 0;
+}
+
+.wifi-container {
+    opacity: 1;
+    animation: fade 2s linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes fade {
+
+    0%,
+    100% {
+        opacity: 0
+    }
+
+    50% {
+        opacity: 1
+    }
+}

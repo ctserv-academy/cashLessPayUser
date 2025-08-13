@@ -1,0 +1,144 @@
+.ReactVirtualized__Table {
+  background-color: #f0f0f0;
+}
+
+.ReactVirtualized__Table__rowColumn {
+  height: inherit;
+  border-right: 1px solid #d1d4d7 !important;
+  font-size: 13px;
+}
+
+.ReactVirtualized__Table .ReactVirtualized__Table__headerRow {
+  width: 100% !important;
+  min-width: 100% !important;
+  background-color: #fff;
+  border: solid 1px #ccc;
+  font-weight: unset !important;
+  text-transform: none !important;
+}
+
+
+.ReactVirtualized__Table__headerColumn:first-of-type,
+.ReactVirtualized__Table__rowColumn:first-of-type,
+.ReactVirtualized__Table__headerColumn {
+  font-size: 14px;
+  margin: 0 !important;
+}
+
+.ReactVirtualized__Table .ReactVirtualized__Table__headerColumn,
+.ReactVirtualized__Table .ReactVirtualized__Table__row {
+  white-space: unset;
+  text-overflow: unset;
+  overflow: unset;
+  word-wrap: break-word;
+  border-right: 1px solid #d1d4d7;
+}
+
+.ReactVirtualized__Table .ReactVirtualized__Table__row {
+  min-width: 100%;
+  overflow: visible !important;
+  border-left: solid 1px #ccc;
+  border-right: solid 1px #ccc;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.05);
+}
+
+.ReactVirtualized__Table .mobile-label {
+  color: #999
+}
+
+.mobilestyleforElement {}
+
+.ReactVirtualized__Table {
+  z-index: 1;
+  overflow: auto;
+}
+
+.ReactVirtualized__Table::-webkit-scrollbar {
+  display: none
+}
+
+
+.ReactVirtualized__Grid.ReactVirtualized__Table__Grid {
+  width: 100% !important;
+  overflow: auto !important;
+  border-bottom: solid 1px #ccc;
+}
+
+.ReactVirtualized__Grid__innerScrollContainer {
+  overflow: initial !important;
+}
+
+.ReactVirtualized__Table__row:nth-child(odd) {
+  background-color: #FFF
+}
+
+.ReactVirtualized__Table__row:nth-child(even) {
+  background-color: #f0f0f0
+}
+
+@media (max-width: 767px) {
+
+  .ReactVirtualized__Grid__innerScrollContainer {
+    margin: auto;
+    border: none;
+  }
+
+  .ReactVirtualized__Table__headerRow {
+    display: none;
+  }
+
+  .ReactVirtualized__Table__row:not(.keepItTableOnMobile) {
+    margin-bottom: 10px !important;
+    border-right: none !important;
+    border-left: none !important;
+    display: block;
+    align-items: initial !important;
+    border-radius: 20px;
+    height: fit-content !important;
+    padding-right: 0px !important;
+  }
+
+  .ReactVirtualized__Table__row:not(.keepItTableOnMobile, .selected-background) {
+    background-color: #fff !important;
+  }
+
+  .selected-background {
+    background-color: rgba(0, 159, 207, 0.1) !important;
+  }
+
+  .ReactVirtualized__Table__rowColumn {
+    width: fit-content;
+    height: fit-content;
+    float: left;
+    padding: 0 10px;
+    border-right: initial !important;
+    margin-top: 10px;
+  }
+}
+
+@media (min-width: 767px) {
+  .ReactVirtualized__Table__headerColumn {
+    color: rgba(0, 0, 0, 0.4);
+    font-weight: bolder;
+    align-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100px;
+    width: 100%;
+  }
+
+  .ReactVirtualized__Table__rowColumn {
+    color: black;
+    font-weight: 500;
+    box-sizing: border-box;
+    margin: 0px;
+    align-content: space-around;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 13px;
+  }
+
+}

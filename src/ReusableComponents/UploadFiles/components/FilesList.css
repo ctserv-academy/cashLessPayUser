@@ -1,0 +1,13 @@
+.files-list {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  max-height:300px;
+  overflow: hidden;
+  overflow-y: auto;
+}

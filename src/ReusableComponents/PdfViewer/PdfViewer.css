@@ -1,0 +1,11 @@
+.closeIcon {
+    margin : 5px 10px 5px 5px;
+    padding: 0px 8px;
+    box-sizing: border-box;
+
+}
+
+.closeIcon:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
