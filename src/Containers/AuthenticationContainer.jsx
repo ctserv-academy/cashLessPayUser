@@ -13,18 +13,18 @@ export function AuthenticationContainer() {
 
     const CheckAuthenticationData = () => {
         try {
-            if (!localStorage.getItem('token') && localStorage.getItem('userData') && window.location.hash !== "#/login" && window.location.hash !== "#/" && window.location.hash !== "/" && window.location.hash !== "") {
-                navigate('/error', { replace: true });
-                localStorage.clear()
-                return
-            }
-            else if (!localStorage.getItem('token') && !isEmpty(localStorage)) {
-                navigate('/login', { replace: true });
-            }
-            else if (!userData) {
-                // setUserData(JSON.parse(getSessionInfo('user')))
-                setUserData(JSON.parse(localStorage.getItem('user')))
-            }
+            // if (!localStorage.getItem('token') && localStorage.getItem('userData') && window.location.hash !== "#/login" && window.location.hash !== "#/" && window.location.hash !== "/" && window.location.hash !== "") {
+            //     navigate('/error', { replace: true });
+            //     localStorage.clear()
+            //     return
+            // }
+            // else if (!localStorage.getItem('token') && !isEmpty(localStorage)) {
+            //     navigate('/login', { replace: true });
+            // }
+            // else if (!userData) {
+            //     // setUserData(JSON.parse(getSessionInfo('user')))
+            //     setUserData(JSON.parse(localStorage.getItem('user')))
+            // }
         }
         catch (err) {
 
