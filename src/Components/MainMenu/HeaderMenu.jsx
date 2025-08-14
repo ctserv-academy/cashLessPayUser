@@ -2,10 +2,8 @@ import React, { useCallback, useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../ContextProvider/AuthContext';
 import { clearSessionInfo } from '../../utils/session';
-import { Nav, Navbar, UncontrolledDropdown, DropdownMenu, DropdownToggle, DropdownItem } from 'reactstrap';
-import './headerMenu.css'
-import { mobileDevicesWidth } from '../../globals';
-import { convertImageBase64ToURL } from '../../utils/functions';
+import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, UncontrolledDropdown, DropdownMenu, DropdownToggle, DropdownItem } from 'reactstrap';
+import './headerMenu.css';
 
 export function HeaderMenu({ mobileMenu, showMobileMenu }) {
 
@@ -29,24 +27,8 @@ export function HeaderMenu({ mobileMenu, showMobileMenu }) {
         userType: JSON.parse(localStorage.getItem('userData'))?.userType,
     };
 
-
     const [state, setState] = useState(STATE);
     const navigate = useNavigate();
-    const [windowWidth, setWindowWidth] = useState(window.innerWidth)
-
-    let header = JSON.parse(localStorage.getItem('header'))
-    let logoUrl = header?.logo ? convertImageBase64ToURL(header.logo) : null
-
-    const handleResize = () => {
-        setWindowWidth(window.innerWidth);
-    };
-
-    useEffect(() => {
-        window.addEventListener('resize', handleResize);
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []);
 
     //Component Did Update Equivalent in Class Based Components
     useEffect(() => {
@@ -57,57 +39,67 @@ export function HeaderMenu({ mobileMenu, showMobileMenu }) {
     }, [mobileMenu, showMobileMenu])
 
 
-    useEffect(() => {
-        setState((prv) => { return { ...prv, loginname: userData?.userInfo?.user_name, privdata: userData?.userPriv } })
-    }, [userData])
-
-
     const logout = useCallback(() => {
         clearSessionInfo();
-        localStorage.clear()
         navigate('/login', { replace: true })
     }, [navigate])
+
+    const toggle = useCallback((key) => {
+        setState({ ...state, isOpen: key !== "goToPage" ? !state.isOpen : false })
+    }, [state])
+
+    const goToPage = useCallback((url, uuid) => {
+        // setState({ ...state, isOpen: false })
+        console.log('url', url)
+        toggle("goToPage")
+        navigate(url, { state: { uuid } })
+    }, [navigate, toggle])
 
 
     return (
         <>
-
             <Navbar color="light" light expand="md" className='app-header'>
-                <div>
-                    <img
-                        id="shortLogo"
-                        src={logoUrl}
-                        alt={`Hospital S.A.L Logo`}
-                        width='50px'
-                        height='50px'
-                    />
-                    {windowWidth > mobileDevicesWidth && <span className='ms-4'> {header?.hospName}</span>}
-                </div>
+                <NavbarBrand href="/">
+                    <span className="navbar-brand"><img src="./img/ctserv.png" alt="logo" /></span>
+                </NavbarBrand>
+                <NavbarToggler onClick={toggle} />
+                <Collapse isOpen={state.isOpen} navbar>
+                    <Nav className="ml-auto" navbar>
 
-                <div className="userInfo-header-right">
-                    <div className="header-content">
-                        <i className="notifIconCSS fa fa-bell-o fa-1x notifIcon"></i>
-                        <span >
-                            {state.userName} ({state.userType})
-                        </span>
-                        <i className="fa fa-user userIcon"></i>
-                        <Nav className="ml-auto" navbar>
-                            <UncontrolledDropdown nav inNavbar>
-                                <DropdownToggle className="user-dropdown-toggle">
-                                    <i className="fa fa-caret-down dropdown-icon"></i>
-                                </DropdownToggle>
-                                <DropdownMenu className="DropdownMenuRightclear">
-                                    <DropdownItem className="pointer" onClick={logout}>
-                                        <span><i className="fa fa-lock"></i>Logout</span>
-                                    </DropdownItem>
-                                </DropdownMenu>
-                            </UncontrolledDropdown>
-                        </Nav>
-                    </div>
-                </div>
+                        <UncontrolledDropdown nav inNavbar>
+                            <DropdownToggle nav caret onClick={() => { console.log('test 1') }}>
+                                Test 1
+                            </DropdownToggle>
+                        </UncontrolledDropdown>
 
+                        <UncontrolledDropdown nav inNavbar>
+                            <DropdownToggle nav caret onClick={() => { console.log('test 2') }}>
+                                Test 2
+                            </DropdownToggle>
+                        </UncontrolledDropdown>
 
-            </Navbar >
+                        <UncontrolledDropdown nav inNavbar>
+                            <DropdownToggle nav caret onClick={() => { console.log('test 3') }}>
+                                Test 3
+                            </DropdownToggle>
+                        </UncontrolledDropdown>
+
+                        <UncontrolledDropdown nav inNavbar>
+                            <DropdownToggle nav caret>
+                                <i className="fa fa-user fa-lg hidden-sm-down" style={{ marginRight: "1rem" }}></i>
+                                {state.userName} ({state.userType})
+                                <i className="icon-arrow-down hidden-sm-down" style={{ marginLeft: "1rem" }}></i>
+                            </DropdownToggle>
+                            <DropdownMenu className='DropdownMenuRightclear'>
+                                <DropdownItem className="pointer" onClick={() => goToPage('/profile')}><span><i className="fa fa-user"></i>Profile</span></DropdownItem>
+                                <DropdownItem className="pointer" onClick={() => goToPage('/auth/Settings')}><span><i className="fa fa-cogs"></i>Settings</span></DropdownItem>
+                                <DropdownItem className="pointer" onClick={logout}><span><i className="fa fa-lock"></i>Logout</span></DropdownItem>
+                            </DropdownMenu>
+                        </UncontrolledDropdown>
+                    </Nav>
+                </Collapse>
+            </Navbar>
+
         </>
 
     )

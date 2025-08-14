@@ -1,35 +1,17 @@
-.navbar {
-    padding: 0 !important;
+#back-to-top-div {
+    /*margin-bottom: 40px;*/
+    position: fixed;
+    bottom: 0;
+    right: 20px;
+    z-index: 1;
+    color: gray;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-.navbar .container-fluid {
-    overflow: initial;
-    padding-left: 0;
-    padding-right: 0;
-    font-size: 14px;
-    background: #0078bb;
-    border-bottom: 1px solid #0078bb;
-    color: #fff !important;
-
-}
-
-
-.navbar .dropdown-toggle {
-    position: relative;
-    color: #fff !important;
-    padding-left: 20px !important;
-    background-color: hsla(0, 0%, 0%, 0.8);
-    width: 40%;
-    z-index: 9999;
-
-}
-
-.navbar-toggler {
-    font-size: 1.5rem;
-}
-
-.app-header {
-    height: 60px;
+#back-to-top-div:hover {
+    color: #f7a707;
 }
 
 .app-header.navbar {
@@ -49,57 +31,53 @@
     margin-left: 0px !important;
 }
 
-
 .navbar .navbar-brand img {
     max-width: 100%;
     max-height: 50px;
     vertical-align: -webkit-baseline-middle;
 }
 
-ul.navbar-nav.ml-auto.mobileMenu {
-    margin-left: 0px !important;
+.navbar {
+    padding: 0 !important;
 }
 
-@media (min-width: 768px) {
-    .nav.navbar-nav.ml-auto.mobileMenu {
-        display: none !important;
-    }
+.navbar .container-fluid {
+    overflow: initial;
+    padding-left: 0;
+    padding-right: 0;
+    font-size: 14px;
+    background: #0078bb;
+    border-bottom: 1px solid #0078bb;
+    color: #fff !important;
+}
+
+.navbar .dropdown-toggle {
+    color: #fff !important;
+    padding-left: 20px !important;
 }
 
 
-.nav.navbar-nav.ml-auto {
-    padding-right: 7px;
-}
-
-.navbar-nav .nav-link,
-.navbar-nav .navbar .dropdown-toggle,
-.navbar .navbar-nav .dropdown-toggle {
-    color: #fff;
-}
-
-.navbar-nav .nav-link:focus,
-.navbar-nav .navbar .dropdown-toggle:focus,
-.navbar .navbar-nav .dropdown-toggle:focus,
-.navbar-nav .nav-link:hover,
-.navbar-nav .navbar .dropdown-toggle:hover,
-.navbar .navbar-nav .dropdown-toggle:hover {
-    color: #fff;
+.app-body .main {
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
 .dropdown-toggle::after {
     display: none !important;
 }
 
-.navbar-nav .nav-link.active {
-    color: #fff;
+.ml-auto {
+    margin-left: auto !important;
 }
 
-.navbar-nav .dropdown-menu {
-    position: absolute !important;
-}
+@media (min-width: 768px) {
+    .DropdownMenuRightclear {
+        right: 0;
+    }
 
-.dropdown-menu {
-    margin: 0px !important;
+    .DropdownMenu-submenu {
+        right: 100px !important
+    }
 }
 
 .dropdown-item.active,
@@ -114,192 +92,4 @@ ul.navbar-nav.ml-auto.mobileMenu {
     margin-left: -10px;
     color: #d1d4d7;
     text-align: center;
-}
-
-.navbar ul.nav.navbar-nav.ml-auto .nav-item .dropdown {
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
-
-.navbar ul.nav.navbar-nav.ml-auto .nav-item .dropdown:focus {
-    border: none;
-    outline: none;
-    box-shadow: none;
-}
-
-
-
-.navbar ul.nav.navbar-nav.ml-auto .nav-item .dropdown button:focus {
-    border: none;
-    outline: none;
-    box-shadow: none;
-}
-
-.nav-link:hover {
-    color: #b9bbbd !important
-}
-
-ul.nav.navbar-nav.ml-auto li.separator {
-    width: 1px;
-    background: #fff;
-    height: 50%;
-}
-
-.nav-tabs .nav-link.active,
-.nav-tabs .nav-link.active:focus,
-.nav-tabs .nav-link.active:hover {
-    border-top: 2px solid #67c2ef;
-}
-
-
-.sub-nav-maincontainer {
-    width: 100% !important;
-    display: contents !important;
-
-}
-
-.sub-nav-maincontainer .dropdown.nav-item {
-    height: 32px !important;
-}
-
-.DropdownToggle-submenu.dropdown-toggle.nav-link {
-    width: 100%;
-    color: #212529 !important;
-    padding: 0.25rem 0rem 0.25rem 1rem !important;
-    float: left !important;
-}
-
-.DropdownMenu-submenu {
-    top: 30px !important
-}
-
-@media (min-width: 768px) {
-    .DropdownMenuRightclear {
-        right: 0;
-    }
-
-    .DropdownMenu-submenu {
-        right: 100px !important
-    }
-}
-
-@media (max-width: 767px) {
-    .DropdownMenu-submenu {
-        left: 100px
-    }
-}
-
-@media (max-width: 767px) {
-    .DropdownMenuRightclear {
-        right: 0
-    }
-}
-
-.nav-arrow {
-    border: solid black;
-    border-width: 0 3px 3px 0;
-    padding: 3px;
-    top: 9px;
-    right: 10px;
-    position: relative;
-    float: right;
-    transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
-}
-
-.sub-nav-maincontainer .dropdown.show.nav-item .nav-arrow {
-    /* .sub-nav-maincontainer .dropdown.show.nav-item .DropdownToggle-submenu.dropdown-toggle.nav-link>.nav-arrow { */
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-    top: 7px;
-}
-
-
-.ml-auto {
-    margin-left: auto !important;
-}
-
-
-
-/* style added by moujahed to remove inline styles */
-.userInfo-header-right {
-    float: right;
-    padding-top: 15px;
-}
-
-.userInfo-header-right .header-content {
-    display: flex;
-    align-items: center;
-    position: absolute;
-    right: 0;
-    top: 0;
-    padding: 1rem 0rem 1rem 1rem;
-}
-
-.userInfo-header-right .notifIcon {
-    margin-right: 1rem;
-    cursor: pointer;
-}
-
-.userInfo-header-right .userName {
-    font-size: 12px;
-}
-
-.userInfo-header-right .userIcon {
-    margin-left: 1rem;
-    font-size: 20px;
-    border: 1px solid white;
-    border-radius: 50%;
-    padding: 4px 7px;
-}
-
-.userInfo-header-right .user-dropdown-toggle {
-    background-color: transparent;
-    border: none;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-}
-
-.userInfo-header-right .dropdown-icon {
-    margin: 0 1rem 0 0.5rem;
-    font-size: 10px;
-}
-
-/* style added by moujahed to remove inline styles */
-
-.routerNavigationList {
-    width: 100%;
-    position: relative;
-    z-index: 999999;
-    background-color: #0078bb;
-    /* opacity:0.7 */
-
-}
-
-.routerNavigationList .nav-item,
-.routerNavigationList .nav-item a {
-    width: 100%;
-    background-color: #0078bb;
-    text-align-last: center;
-    /* opacity:0.7 */
-}
-
-#shortLogo {
-    margin-left: 25px;
-}
-
-@media (max-width: 767px) {
-    #shortLogo {
-        margin-left: 10px;
-    }
-}
-
-.navbar>.container,
-.navbar>.container-fluid,
-.navbar>.container-lg,
-.navbar>.container-md,
-.navbar>.container-sm,
-.navbar>.container-xl,
-.navbar>.container-xxl {
-    justify-content: initial;
 }
