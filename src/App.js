@@ -29,7 +29,7 @@ function App() {
           <Route element={<AuthenticationContainer />}>
             <Route path='/login' element={<Login />} />
             <Route path='/error' element={<PageError />} />
-
+            
             <Route path='/' element={<Full />}>
             </Route>
           </Route>

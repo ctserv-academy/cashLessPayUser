@@ -191,110 +191,111 @@ export function Login() {
     }, [navigate, state.sys, state.showShortLogo, state.shortLogo, state.hospitalName, deferredPrompt])
 
     const handleLogin = useCallback(async () => {
-        try {
-            setState({ ...state, errorLoginTxt: '', pswdChangeSuccess: '', pswdChangeError: '' });
-            setisLoading(prv => prv + 1)
-            if (state.recaptchaValue && !state.recaptchaExpired) {
-                const username = state.username;
-                const password = state.password;
-                let isError = false;
-                if (!username || !password) {
-                    isError = true;
-                    setState({
-                        ...state,
-                        errorUserClass: username ? state.errorUserClass : "alert-danger",
-                        errorUserTxt: username ? state.errorUserTxt : "Please enter your user name",
-                        errorPswdClass: password ? state.errorPswdClass : "alert-danger",
-                        errorPswdTxt: password ? state.errorPswdTxt : "Please enter your password",
-                    });
-                }
-                else {
-                    setState({
-                        ...state,
-                        errorUserClass: "",
-                        errorUserTxt: "",
-                    });
-                };
+        navigate('/', { replace: true });
+        // try {
+        //     setState({ ...state, errorLoginTxt: '', pswdChangeSuccess: '', pswdChangeError: '' });
+        //     setisLoading(prv => prv + 1)
+        //     if (state.recaptchaValue && !state.recaptchaExpired) {
+        //         const username = state.username;
+        //         const password = state.password;
+        //         let isError = false;
+        //         if (!username || !password) {
+        //             isError = true;
+        //             setState({
+        //                 ...state,
+        //                 errorUserClass: username ? state.errorUserClass : "alert-danger",
+        //                 errorUserTxt: username ? state.errorUserTxt : "Please enter your user name",
+        //                 errorPswdClass: password ? state.errorPswdClass : "alert-danger",
+        //                 errorPswdTxt: password ? state.errorPswdTxt : "Please enter your password",
+        //             });
+        //         }
+        //         else {
+        //             setState({
+        //                 ...state,
+        //                 errorUserClass: "",
+        //                 errorUserTxt: "",
+        //             });
+        //         };
 
-                if (!isError) {
-                    let resp = await FetchData(`${authUrlPath}`, 'post', { Usr_code: username, Usr_Pwrd: password });
-                    if (resp.data.length === 0 || resp.data[0] === '') {
-                        recaptchaRef.current.reset();
-                        setState({ ...state, errorLoginTxt: 'Invalid user code/password combination', recaptchaValue: null });
-                    }
-                    else {
-                        let userData = {
-                            userCode: resp.data[0].userCode,
-                            userName: resp.data[0].userName,
-                            userType: resp.data[0].userType,
-                        }
-                        localStorage.setItem('userData', JSON.stringify(userData));
-                        if (state.showShortLogo) localStorage.setItem('header', JSON.stringify({ logo: state.shortLogo, hospName: state.hospitalName }))
-                        // if (resp.data[0].userCode?.toLowerCase() === 'su') {
-                        //     handleNavigate(resp.data[0], true)
-                        // } else if (!resp.data[0].userType) {
-                        //     recaptchaRef.current.reset();
-                        //     setState({ ...state, errorLoginTxt: resp.data[0], recaptchaValue: null });
-                        // } else if (resp.data[0].userType !== 'D') {
-                        //     recaptchaRef.current.reset();
-                        //     setState({ ...state, errorLoginTxt: 'This is a Physician Portal. Access Denied', recaptchaValue: null });
-                        // } else {
-                        //     if (state.sys?.sys_SendOTP) {
-                        //         setState({ ...state, loginResp: resp.data[0] });
-                        //         toggleModal('otpModal')
-                        //     } else {
-                        // handleNavigate(resp.data[0])
-                        // }
-                        // }
+        //         if (!isError) {
+        //             let resp = await FetchData(`${authUrlPath}`, 'post', { Usr_code: username, Usr_Pwrd: password });
+        //             if (resp.data.length === 0 || resp.data[0] === '') {
+        //                 recaptchaRef.current.reset();
+        //                 setState({ ...state, errorLoginTxt: 'Invalid user code/password combination', recaptchaValue: null });
+        //             }
+        //             else {
+        //                 let userData = {
+        //                     userCode: resp.data[0].userCode,
+        //                     userName: resp.data[0].userName,
+        //                     userType: resp.data[0].userType,
+        //                 }
+        //                 localStorage.setItem('userData', JSON.stringify(userData));
+        //                 if (state.showShortLogo) localStorage.setItem('header', JSON.stringify({ logo: state.shortLogo, hospName: state.hospitalName }))
+        //                 // if (resp.data[0].userCode?.toLowerCase() === 'su') {
+        //                 //     handleNavigate(resp.data[0], true)
+        //                 // } else if (!resp.data[0].userType) {
+        //                 //     recaptchaRef.current.reset();
+        //                 //     setState({ ...state, errorLoginTxt: resp.data[0], recaptchaValue: null });
+        //                 // } else if (resp.data[0].userType !== 'D') {
+        //                 //     recaptchaRef.current.reset();
+        //                 //     setState({ ...state, errorLoginTxt: 'This is a Physician Portal. Access Denied', recaptchaValue: null });
+        //                 // } else {
+        //                 //     if (state.sys?.sys_SendOTP) {
+        //                 //         setState({ ...state, loginResp: resp.data[0] });
+        //                 //         toggleModal('otpModal')
+        //                 //     } else {
+        //                 // handleNavigate(resp.data[0])
+        //                 // }
+        //                 // }
 
-                        let _data = {
-                            module: 'Adm'
-                        }
-                        localStorage.setItem('token', resp.data[0].access_token);
+        //                 let _data = {
+        //                     module: 'Adm'
+        //                 }
+        //                 localStorage.setItem('token', resp.data[0].access_token);
 
-                        let priv_resp = await FetchData(`${urlPath}/UsersPrivileges/getUserPrivilegesByModule`, 'get', _data);
-                        priv_resp = priv_resp.data.map(e => {
-                            return {
-                                "User": username,
-                                "Module": "Admission",
-                                "Step": e.stepCode,
-                                "Step Name": e.step_Desc,
-                                "Add": e.priv_Add ? 1 : 0,
-                                "Modify": e.priv_Modify ? 1 : 0,
-                                "Delete": e.priv_Delete ? 1 : 0,
-                                "View": e.priv_View ? 1 : 0,
-                                "SendMail": e.priv_SendMail ? 1 : 0,
-                                "uuid": e.step_Guid
-                            }
-                        })
+        //                 let priv_resp = await FetchData(`${urlPath}/UsersPrivileges/getUserPrivilegesByModule`, 'get', _data);
+        //                 priv_resp = priv_resp.data.map(e => {
+        //                     return {
+        //                         "User": username,
+        //                         "Module": "Admission",
+        //                         "Step": e.stepCode,
+        //                         "Step Name": e.step_Desc,
+        //                         "Add": e.priv_Add ? 1 : 0,
+        //                         "Modify": e.priv_Modify ? 1 : 0,
+        //                         "Delete": e.priv_Delete ? 1 : 0,
+        //                         "View": e.priv_View ? 1 : 0,
+        //                         "SendMail": e.priv_SendMail ? 1 : 0,
+        //                         "uuid": e.step_Guid
+        //                     }
+        //                 })
 
-                        let obj = { userInfo: resp.data[0].userinfo, userPriv: priv_resp }
+        //                 let obj = { userInfo: resp.data[0].userinfo, userPriv: priv_resp }
 
-                        let sys_File = await FetchData(`${urlPath}/System/SysFeatures`, 'get',);
-                        let inv_Sys = await FetchData(`${urlPath}/System/InvSystem`, 'get',);
-                        let getMultiVersion = await FetchData(`${urlPath}/MultiVersion/GetMultiVersion`, 'get', { Module: 'ADM' });
-                        let sys_obj = { sys: sys_File.data[0].sys, features: sys_File.data[0].features, invSys: inv_Sys.data[0] }
+        //                 let sys_File = await FetchData(`${urlPath}/System/SysFeatures`, 'get',);
+        //                 let inv_Sys = await FetchData(`${urlPath}/System/InvSystem`, 'get',);
+        //                 let getMultiVersion = await FetchData(`${urlPath}/MultiVersion/GetMultiVersion`, 'get', { Module: 'ADM' });
+        //                 let sys_obj = { sys: sys_File.data[0].sys, features: sys_File.data[0].features, invSys: inv_Sys.data[0] }
 
-                        localStorage.setItem('sysFileData', JSON.stringify(sys_obj));
-                        localStorage.setItem('user', JSON.stringify(obj));
-                        localStorage.setItem('multiVersion', JSON.stringify(getMultiVersion.data));
-                        navigate('/', { replace: true });
-                    }
-                }
-            } else {
-                setState(prv => {
-                    return { ...prv, errorLoginTxt: "Please Complete Recaptcha." }
-                });
-            }
-        }
-        catch (e) {
-            recaptchaRef.current.reset();
-            setState({ ...state, errorLoginTxt: 'Login Failed', recaptchaValue: null });
-            throw e;
-        }
-        finally {
-            setisLoading(prv => prv - 1)
-        }
+        //                 localStorage.setItem('sysFileData', JSON.stringify(sys_obj));
+        //                 localStorage.setItem('user', JSON.stringify(obj));
+        //                 localStorage.setItem('multiVersion', JSON.stringify(getMultiVersion.data));
+        //                 navigate('/', { replace: true });
+        //             }
+        //         }
+        //     } else {
+        //         setState(prv => {
+        //             return { ...prv, errorLoginTxt: "Please Complete Recaptcha." }
+        //         });
+        //     }
+        // }
+        // catch (e) {
+        //     recaptchaRef.current.reset();
+        //     setState({ ...state, errorLoginTxt: 'Login Failed', recaptchaValue: null });
+        //     throw e;
+        // }
+        // finally {
+        //     setisLoading(prv => prv - 1)
+        // }
     }, [state, setState, setisLoading, toggleModal, handleNavigate])
 
     const handleOnAccept = useCallback(async () => {

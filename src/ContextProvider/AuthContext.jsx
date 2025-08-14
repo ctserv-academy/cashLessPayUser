@@ -1,7 +1,7 @@
 import React, { createContext, useCallback, useState } from 'react'
 
 
-export const AuthContext = createContext();
+export const      AuthContext = createContext();
 
 export function AuthContextWrapper({ children }) {
     const [userData, setUserData] = useState(null);

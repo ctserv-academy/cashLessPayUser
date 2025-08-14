@@ -1,0 +1,364 @@
+/* Wallet Container */
+.wallet-container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Wallet Card */
+.wallet-card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  background-color: #ffffff;
+  margin-top: 16px;
+}
+
+.wallet-body {
+  padding: 24px 20px;
+}
+
+/* Balance Section */
+.balance-section {
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #f2f2f7;
+}
+
+.balance-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.balance-title {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #1c1c1e;
+  margin: 0;
+}
+
+.hide-button {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #009fcf;
+  padding: 8px 12px;
+  border: none;
+  background: none;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.hide-button:hover {
+  color: #006c90;
+  background-color: rgba(0, 159, 207, 0.1);
+  text-decoration: none;
+}
+
+.hide-button:active {
+  background-color: rgba(0, 159, 207, 0.2);
+}
+
+.hide-button i {
+  margin-right: 8px;
+}
+
+.balance-amount {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.currency-symbol {
+  font-family: "Inter", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #009fcf;
+}
+
+.balance-value {
+  font-family: "Inter", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #1c1c1e;
+}
+
+/* Daily Limit Section */
+.daily-limit-section {
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #f2f2f7;
+}
+
+.limit-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.limit-label {
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #8e8e93;
+}
+
+.limit-amount {
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1c1c1e;
+}
+
+.limit-info {
+  margin-bottom: 16px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.limit-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 8px 0;
+}
+
+.limit-row:last-child {
+  margin-bottom: 0;
+}
+
+.limit-item-label {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #8e8e93;
+}
+
+.limit-item-value {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1c1c1e;
+}
+
+/* QR Code Section */
+.qr-section {
+  margin-bottom: 24px;
+}
+
+.qr-title {
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1c1c1e;
+  margin-bottom: 16px;
+  text-align: center;   
+}
+
+.qr-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 140px;
+  background-color: #f2f2f7;
+  border-radius: 12px;
+  border: 2px dashed #8e8e93;
+  margin: 0 8px;
+}
+
+.qr-image {
+  text-align: center;
+  padding: 20px;
+}
+
+.qr-code-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 12px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.qr-image small {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #8e8e93;
+  display: block;
+}
+
+/* Mobile-First Responsive Design */
+@media (max-width: 480px) {
+  .wallet-container {
+    padding: 0 12px;
+    margin-top: 12px;
+  }
+
+  .wallet-body {
+    padding: 20px 16px;
+  }
+
+  .balance-title {
+    font-size: 18px;
+  }
+
+  .currency-symbol,
+  .balance-value {
+    font-size: 28px;
+  }
+
+  .hide-button {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+
+  .limit-label,
+  .limit-amount {
+    font-size: 16px;
+  }
+
+  .limit-info {
+    padding: 12px;
+  }
+
+  .limit-item-label,
+  .limit-item-value {
+    font-size: 14px;
+  }
+
+  .qr-title {
+    font-size: 16px;
+  }
+
+  .qr-container {
+    min-height: 120px;
+    margin: 0 4px;
+  }
+
+  .qr-image {
+    padding: 16px;
+  }
+
+  .qr-code-img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .qr-image small {
+    font-size: 12px;
+  }
+
+  .freeze-button {
+    height: 44px;
+    padding: 0 16px;
+    font-size: 14px;
+    min-width: 120px;
+  }
+}
+
+/* Action Buttons */
+.wallet-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.freeze-button {
+  height: 48px;
+  padding: 0 20px;
+  border-radius: 8px;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  transition: all 0.3s ease;
+  min-width: 140px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.freeze-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.freeze-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.freeze-button i {
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+/* Freeze button states */
+.freeze-button.btn-warning {
+  background-color: #ff9500;
+  color: #ffffff;
+}
+
+.freeze-button.btn-warning:hover {
+  background-color: #e6850e;
+  color: #ffffff;
+}
+
+.freeze-button.btn-success {
+  background-color: #34c759;
+  color: #ffffff;
+}
+
+.freeze-button.btn-success:hover {
+  background-color: #2fb350;
+  color: #ffffff;
+}
+
+/* Tablet adjustments */
+@media (min-width: 481px) and (max-width: 768px) {
+  .wallet-container {
+    max-width: 500px;
+    padding: 0 20px;
+  }
+}
+
+/* Desktop adjustments */
+@media (min-width: 769px) {
+  .wallet-container {
+    max-width: 450px;
+    padding: 0 32px;
+  }
+}
+
+/* Focus States for Accessibility */
+.hide-button:focus,
+.freeze-button:focus {
+  outline: 2px solid #009fcf;
+  outline-offset: 2px;
+}
+
+/* Hidden State Styling */
+.balance-value,
+.limit-amount,
+.spent-amount {
+  transition: opacity 0.3s ease;
+}
+
+/* Ensure proper contrast for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .balance-value,
+  .limit-amount,
+  .limit-item-value {
+    transition: none;
+  }
+}
