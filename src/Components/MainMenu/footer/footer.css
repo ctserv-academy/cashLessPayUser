@@ -1,6 +1,6 @@
 #footerMianContainer {
     text-align: right;
-    position: relative;
+    position: absolute;
     height: 40px;
     bottom: 0;
     width: 100%;
