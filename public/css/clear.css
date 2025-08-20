@@ -87,11 +87,11 @@ body,
 .main,
 .sidebar-fixed {
     height: 100% !important;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .app-body {
-    height: calc(100% - 100px)
+    height: calc(100% - 20px);
 }
 
 .container-fluid,

@@ -21,11 +21,13 @@ export function UserNavbar() {
     // ========================================
     // STATE MANAGEMENT
     // ========================================
-    const [isOpen, setIsOpen] = useState(false);
-    const [isVisible, setIsVisible] = useState(true);
-    const [lastScrollY, setLastScrollY] = useState(0);
-    const [deferredPrompt, setDeferredPrompt] = useState(null);
-    // const [isInstalled, setIsInstalled] = useState(false);
+    const [state, setState] = useState({
+        isOpen: false,
+        isVisible: true,
+        lastScrollY: 0,
+        deferredPrompt: null,
+        // isInstalled: false
+    });
 
     
     const navigate = useNavigate();
@@ -44,10 +46,10 @@ export function UserNavbar() {
             showOnMobile: true
         },
         {
-            id: 'payment',
-            label: 'Payment',
-            icon: 'fa-qrcode',
-            path: '/payment',
+            id: 'wallet',
+            label: 'Wallet',
+            icon: 'fa-money',
+            path: '/wallet',
             showOnDesktop: true,
             showOnMobile: true,
             isPrimary: true
@@ -90,11 +92,17 @@ export function UserNavbar() {
     // ========================================
     // NAVIGATION HANDLERS
     // ========================================
-    const toggle = () => setIsOpen(!isOpen);
+    const toggle = () => setState((prev) => ({
+        ...prev,
+        isOpen: !prev.isOpen
+    }));
 
     const handleNavigation = useCallback((path) => {
         navigate(path);
-        setIsOpen(false);
+        setState((prev) => ({
+            ...prev,
+            isOpen: false
+        }));
     }, [navigate]);
 
     const logout = useCallback(() => {
@@ -124,7 +132,7 @@ export function UserNavbar() {
     // ========================================
     return (
         <Navbar 
-            className={`User-navbar ${isVisible ? 'navbar-visible' : 'navbar-hidden'}`}
+            className={`User-navbar ${state.isVisible ? 'navbar-visible' : 'navbar-hidden'}`}
             expand="lg" 
             fixed="top"
         >
@@ -173,18 +181,17 @@ export function UserNavbar() {
                     <DropdownToggle tag="div" className="desktop-User-toggle">
                         <div className="User-info-section">
                             <div className="User-details">
-                                <span className="User-name">User</span>
-                                <small className="User-terminal">Terminal 1</small>
+                                <span className="User-name">Username</span>
                             </div>
                             <i className="fa fa-user-circle User-avatar"></i>
                             <i className="fa fa-caret-down User-caret"></i>
                         </div>
                     </DropdownToggle>
-                    <DropdownMenu right className="desktop-User-menu">
+                    <DropdownMenu end className="desktop-User-menu">
                         <DropdownItem header>
                             <strong>User Portal</strong>
                             <br />
-                            <small className="text-muted">Terminal 1</small>
+                            <small className="text-muted">username</small>
                         </DropdownItem>
                         <DropdownItem divider />
                         <DropdownItem 
@@ -229,11 +236,11 @@ export function UserNavbar() {
                     <DropdownToggle tag="div" className="mobile-profile-toggle">
                         <i className="fa fa-user mobile-profile-icon"></i>
                     </DropdownToggle>
-                    <DropdownMenu right className="mobile-profile-menu">
+                    <DropdownMenu end className="mobile-profile-menu">
                         <DropdownItem header>
                             <strong>User Portal</strong>
                             <br />
-                            <small className="text-muted">Terminal 1</small>
+                            <small className="text-muted">username</small>
                         </DropdownItem>
                         <DropdownItem divider />
                         <DropdownItem 
@@ -271,14 +278,14 @@ export function UserNavbar() {
 
                 {/* Mobile Menu Toggler */}
                 <NavbarToggler onClick={toggle} className="mobile-toggler">
-                    <i className={`fa ${isOpen ? 'fa-times' : 'fa-bars'} toggler-icon`}></i>
+                    <i className={`fa ${state.isOpen ? 'fa-times' : 'fa-bars'} toggler-icon`}></i>
                 </NavbarToggler>
             </div>
 
             {/* ========================================
                 MOBILE NAVIGATION MENU
                 ======================================== */}
-            <Collapse isOpen={isOpen} navbar>
+            <Collapse isOpen={state.isOpen} navbar>
                 <Nav className="mobile-nav d-lg-none" navbar>
                     {navigationItems.map((item) => (
                         <NavItem key={item.id} className="nav-item-mobile">
