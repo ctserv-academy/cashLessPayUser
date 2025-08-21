@@ -1,0 +1,39 @@
+.transaction-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #e0e0e0;
+  font-family: "Inter", sans-serif;
+  background-color: #fff;
+}
+
+.transaction-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.vendor-name {
+  font-weight: 600;
+  font-size: 16px;
+  color: #1c1c1e;
+}
+
+.timestamp {
+  font-size: 12px;
+  color: #8e8e93;
+  margin-top: 4px;
+}
+
+.amount {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.amount.positive {
+  color: #34c759; /* green */
+}
+
+.amount.negative {
+  color: #ff3b30; /* red */
+}

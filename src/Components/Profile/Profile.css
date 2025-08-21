@@ -1,0 +1,355 @@
+/* --- Design System Variables --- */
+:root {
+  --font-family: "Inter", sans-serif;
+  --primary-color: #009fcf;
+  --secondary-color: #006c90;
+  --error-color: #ff3b30;
+  --text-dark: #1c1c1e;
+  --text-medium: #8e8e93;
+  --bg-light: #f2f2f7;
+  --white: #ffffff;
+}
+
+.profile-container {
+  max-width: 600px;
+  font-family: var(--font-family);
+}
+
+/* Card component styles from Design System */
+.profile-card {
+  border: none;
+  border-radius: 8px; /* Corrected */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Corrected */
+  /* padding: 30px; */
+  padding-bottom: 3em;
+}
+
+.profile-header {
+  text-align: center;
+  padding-bottom: 24px; /* Large spacing */
+  border-bottom: 1px solid var(--bg-light);
+}
+
+.profile-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 16px; /* Medium spacing */
+}
+
+/* Typography styles from Design System */
+.page-title {
+  /* For "John Doe" */
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0;
+}
+.text-small.text-secondary {
+  /* For "Personal Account" */
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-medium);
+}
+
+.profile-details {
+  padding: 24px 0; /* Large spacing */
+}
+
+/* Form & Input styles from Design System */
+.form-group {
+  margin-bottom: 24px; /* Large spacing */
+}
+.form-group:last-of-type {
+  margin-bottom: 0;
+}
+
+.form-group label {
+  /* For "Small Text" */
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-medium);
+  margin-bottom: 8px; /* Small spacing */
+}
+
+.form-group .form-control {
+  /* Input fields */
+  height: 48px;
+  border-radius: 6px; /* Matching button radius */
+  border: 1px solid #ced4da; /* Default border */
+  background-color: var(--bg-light);
+  font-size: 16px; /* Body text */
+  font-weight: 400; /* Body text */
+  color: var(--text-dark);
+  box-shadow: none;
+}
+
+.form-group .form-control:focus {
+  background-color: var(--white);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px var(--primary-color); /* Corrected focus */
+}
+
+.pin-input-wrapper {
+  position: relative;
+}
+.pin-input-wrapper .form-control {
+  padding-right: 3rem;
+}
+.pin-toggle-btn {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--text-medium);
+  cursor: pointer;
+}
+
+/* Button styles from Design System */
+.profile-actions {
+  display: flex;
+  /* float: right; */
+  justify-content: center;
+  padding-top: 24px; /* Large spacing */
+  border-top: 1px solid var(--bg-light);
+  gap: 16px;
+}
+
+.btn-primary-custom,
+.btn-error-custom {
+  height: 48px; /* Corrected */
+  padding: 0 16px; /* Corrected */
+  border-radius: 6px; /* Corrected */
+  font-size: 16px; /* Corrected */
+  font-weight: 600; /* Corrected */
+  border: none;
+}
+
+.btn-primary-custom {
+  background-color: var(--primary-color);
+  color: var(--white);
+  float: left;
+}
+.btn-primary-custom:hover {
+  background-color: var(--secondary-color);
+}
+
+.btn-error-custom {
+  background-color: var(--error-color);
+  color: var(--white);
+  float: right;
+}
+
+/* This makes the input look like plain text when not in edit mode */
+.form-group {
+  background-color: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+  cursor: default;
+  padding-left: 0;
+}
+
+.readonly-input {
+  background-color: lightgrey;
+  pointer-events: none;
+}
+
+/* Style for the secondary/cancel button from your design system */
+.btn-secondary-custom {
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: var(--white);
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+.btn-secondary-custom:hover {
+  background-color: var(--bg-light);
+}
+
+.action-link {
+  all: unset;
+  float: right;
+  color: var(--error-color);
+  text-decoration: underline;
+}
+.action-link-save {
+  all: unset;
+  float: left;
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+/* Small adjustment for button layout */
+.profile-actions {
+  gap: 16px;
+}
+
+.top-bar-profile {
+  position: fixed;
+  right: 2em;
+  z-index: 999;
+  background-color: white;
+  width: 100%;
+  height: 2em;
+  font-weight: 550;
+  border-top: 1px solid var(--bg-light);
+}
+
+/*Footer Bar*/
+.fixed-footer-bar {
+  position: fixed;
+  bottom: 40px;
+  left: 0;
+  right: 0;
+  background-color: var(--white);
+  border-top: 1px solid var(--bg-light);
+  padding: 12px 30px;
+  gap: 16px;
+  z-index: 999;
+}
+
+/* Biometric Passkey Styles */
+.biometric-section {
+  margin-top: 8px;
+}
+
+.biometric-status {
+  padding: 12px;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  border: 1px solid #e9ecef;
+}
+
+.biometric-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.biometric-text {
+  font-size: 14px;
+  color: #6c757d;
+  font-weight: 500;
+}
+
+.biometric-setup {
+  padding: 16px;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  border: 1px solid #e9ecef;
+}
+
+.biometric-options {
+  margin-bottom: 16px;
+}
+
+.biometric-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  min-height: 100px;
+}
+
+.biometric-option:hover {
+  border-color: #007bff;
+  background-color: #f8f9ff;
+}
+
+.biometric-option.selected {
+  border-color: #007bff;
+  background-color: #e7f3ff;
+}
+
+.biometric-option i {
+  font-size: 24px;
+  color: #6c757d;
+  margin-bottom: 8px;
+}
+
+.biometric-option.selected i {
+  color: #007bff;
+}
+
+.biometric-option span {
+  font-size: 14px;
+  font-weight: 500;
+  color: #495057;
+}
+
+.biometric-option.selected span {
+  color: #007bff;
+}
+
+.biometric-actions {
+  text-align: center;
+}
+
+.biometric-enrollment {
+  text-align: center;
+  padding: 20px;
+}
+
+.enrollment-status {
+  margin-bottom: 16px;
+}
+
+.enrollment-status i {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.enrollment-status p {
+  margin-bottom: 8px;
+  font-size: 16px;
+  color: #495057;
+}
+
+.enrollment-status .small {
+  font-size: 14px;
+  color: #6c757d;
+}
+
+.enrollment-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* Responsive adjustments for biometric section */
+@media (max-width: 768px) {
+  .biometric-option {
+    padding: 16px;
+    min-height: 80px;
+  }
+
+  .biometric-option i {
+    font-size: 20px;
+  }
+
+  .biometric-option span {
+    font-size: 13px;
+  }
+
+  .enrollment-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .enrollment-actions .btn {
+    width: 100%;
+    max-width: 200px;
+  }
+}

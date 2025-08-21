@@ -57,11 +57,19 @@ export function UserNavbar() {
         {
             id: 'transactions',
             label: 'Transactions',
-            icon: 'fa-list-alt',
+            icon: 'fa-list',
             path: '/transactions',
             showOnDesktop: true,
             showOnMobile: true
-        }
+        },
+        // {
+        //     id: 'top-ups',
+        //     label: 'Top-Ups',
+        //     icon: 'fa-list-ul', // changed from 'fa-list' to 'fa-list-ul' for a better list icon
+        //     path: '/top-ups',
+        //     showOnDesktop: true,
+        //     showOnMobile: true
+        // }
     ];
 
     // ========================================

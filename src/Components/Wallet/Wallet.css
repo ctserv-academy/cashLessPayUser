@@ -1,0 +1,180 @@
+/* --- Design System Variables --- */
+:root {
+    --font-family: 'Inter', sans-serif;
+    --primary-color: #009FCF;
+    --secondary-color: #006C90;
+    --success-color: #34C759;
+    --warning-color: #FF9500;
+    --text-dark: #1C1C1E;
+    --text-medium: #8E8E93;
+    --bg-light: #F2F2F7;
+    --white: #FFFFFF;
+}
+
+body {
+    font-family: var(--font-family);
+}
+
+/* --- Wallet Container & Card --- */
+.wallet-container {
+    max-width: 450px; /* From desktop media query */
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+.wallet-card {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    background-color: var(--white);
+    margin-top: 16px;
+    padding: 20px; 
+}
+
+/* Typography from Design System */
+.section-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0;
+}
+.body-text {
+    font-size: 16px;
+    font-weight: 400;
+}
+.small-text {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+/* --- Balance Section --- */
+.balance-section {
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--bg-light);
+}
+
+.balance-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.hide-button {
+    font-size: 16px;
+    font-weight: 600; /* Button Text */
+    color: var(--primary-color);
+    padding: 8px 16px;
+    border: none;
+    background: none;
+    border-radius: 6px;
+}
+.hide-button:hover {
+    color: var(--secondary-color);
+}
+.hide-button i {
+    margin-right: 8px;
+}
+
+.balance-amount {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+.currency-symbol {
+    font-size: 28px; /* Page Title size */
+    font-weight: 700;
+    color: var(--primary-color);
+}
+.balance-value {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+/* --- Daily Limit Section --- */
+.daily-limit-section {
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--bg-light);
+}
+.limit-header, .limit-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+.limit-label, .limit-item-label {
+    font-size: 14px; /* Small Text */
+    color: var(--text-medium);
+}
+.limit-amount, .limit-item-value {
+    font-size: 16px; /* Body Text */
+    font-weight: 600;
+    color: var(--text-dark);
+}
+.limit-info {
+    background-color: var(--bg-light);
+    border-radius: 8px;
+    padding: 16px;
+}
+
+/* --- QR Code Section --- */
+.qr-section {
+    text-align: center;
+    margin-bottom: 24px;
+}
+.qr-section .section-title {
+    margin-bottom: 16px;
+}
+.qr-container {
+    background-color: var(--bg-light);
+    border-radius: 8px;
+    padding: 24px;
+}
+.qr-code-img {
+    width: 11m;
+    height: 11em;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+.qr-container small {
+    font-size: 14px;
+    color: var(--text-medium);
+}
+
+.qr-code-frozen {
+    filter: blur(5px);
+    /* opacity: 0; */
+    pointer-events: none; /* Prevent interaction */
+}
+
+/* --- Action Buttons --- */
+.wallet-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+}
+.freeze-button {
+    height: 48px; 
+    padding: 0 16px; 
+    border-radius: 6px; 
+    font-size: 16px; 
+    font-weight: 600; 
+    border: none;
+    color: var(--white);
+    transition: background-color 0.3s ease;
+}
+.freeze-button:hover {
+    filter: brightness(90%);
+}
+.freeze-button.btn-warning {
+    background-color: var(--warning-color);
+}
+.freeze-button.btn-success {
+    background-color: var(--success-color);
+}
+.freeze-button i {
+    margin-right: 8px;
+}
