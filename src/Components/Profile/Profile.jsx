@@ -23,7 +23,7 @@ function Profile() {
   // Calculate date restrictions
   const today = Moment();
   const maxDate = today; // Cannot select dates beyond today
-  const minDate = Moment("01-01-1990", "DD-MM-YYYY"); // Cannot select dates more than 110 years ago
+  const minDate = Moment("01-01-1920", "DD-MM-YYYY"); // Cannot select dates more than 110 years ago
 
   // Original data to revert to when canceling
   const originalData = useMemo(
