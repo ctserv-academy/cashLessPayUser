@@ -78,7 +78,7 @@ function Profile() {
   // Handle logout with useCallback
   const handleLogout = useCallback(() => {
     clearSessionInfo();
-    navigate("/login", { replace: true });
+    navigate("/login", { replace: false });
   }, [navigate]);
 
   // Handle cancel with useCallback

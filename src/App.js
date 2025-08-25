@@ -13,6 +13,9 @@ import Wallet from "./Components/Wallet/Wallet";
 import Profile from "./Components/Profile/Profile";
 import Home from "./Components/Home/Home";
 import Transactions from "./Components/Transactions/Transactions";
+import Authentication from "./Components/Authentication/Authentication";
+import AuthGate from "./Components/AuthGate/AuthGate";  // Adjust path accordingly
+
 // import PDFViewer from './ReusableComponents/PdfViewer/PDFViewer';
 
 function App() {
@@ -36,23 +39,24 @@ function App() {
 
   return (
     // <PDFViewer />
-    <Routes>
-      <Route element={<ErrorContainer />}>
-        <Route element={<LoadingContainer />}>
-          <Route element={<AuthenticationContainer />}>
-            <Route path="/login" element={<Login />} />
-            <Route path="/error" element={<PageError />} />
-
-            <Route path="/" element={<Full />}>
-              <Route path="/" element={<Home />} />
-              <Route path="/wallet" element={<Wallet />} />
-              <Route path="/profile" element={<Profile />} />
-              <Route path="/transactions" element={<Transactions />} />
-            </Route>
+   <Routes>
+    <Route element={<ErrorContainer />}>
+      <Route element={<LoadingContainer />}>
+        <Route element={<AuthenticationContainer />}>
+          <Route path="/login" element={<Login />} />
+          <Route path="/authenticate" element={<Authentication />} />
+          <Route path="/error" element={<PageError />} />
+          <Route path="/" element={<Full />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/wallet" element={<Wallet />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/transactions" element={<Transactions />} />
           </Route>
         </Route>
       </Route>
-    </Routes>
+    </Route>
+  </Routes>
+
   );
 }
 

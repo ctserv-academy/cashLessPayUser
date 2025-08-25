@@ -191,7 +191,7 @@ export function Login() {
     }, [navigate, state.sys, state.showShortLogo, state.shortLogo, state.hospitalName, deferredPrompt])
 
     const handleLogin = useCallback(async () => {
-        navigate('/', { replace: true });
+        navigate('/authenticate', { replace: true });
 
         // try {
         //     setState({ ...state, errorLoginTxt: '', pswdChangeSuccess: '', pswdChangeError: '' });

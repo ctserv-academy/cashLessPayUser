@@ -44,18 +44,18 @@ const Home = () => {
 
   const [handleRegister, handleAuthenticate] = useWebAuth();
 
-  useEffect(() => {
-    const startupRegister = async()=>{
-      if (! await getFromDB('credential')) {
-      const credential = await handleRegister();
-      await setToDB('credential', credential.id);
-      }
+  // useEffect(() => {
+  //   const startupRegister = async()=>{
+  //     if (! await getFromDB('credential')) {
+  //     const credential = await handleRegister();
+  //     await setToDB('credential', credential.id);
+  //     }
 
-    }
-    startupRegister();
-    // Example effect: Log balance changes
-    // console.log("Wallet balance updated:", walletData.balance);
-  }, []);
+  //   }
+  //   startupRegister();
+  //   // Example effect: Log balance changes
+  //   // console.log("Wallet balance updated:", walletData.balance);
+  // }, []);
 
   return (
     <div className="wallet-container">
@@ -71,9 +71,9 @@ const Home = () => {
           />
         </CardBody>
       </Card>
-      <button onClick={handleAuthenticate}>
+      {/* <button onClick={handleAuthenticate}>
         Authenticate
-      </button>
+      </button> */}
     </div>
   );
 };
